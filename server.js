@@ -15,6 +15,11 @@ app.use(
 app.use(cors());
 app.use(express.json());
 
+// ADD THIS HERE 👇
+app.get("/", (req, res) => {
+  res.send("Backend API is running 🚀");
+});
+
 // Routes
 const contactRoutes = require("./routes/contactRoutes");
 app.use("/api/contact", contactRoutes);
