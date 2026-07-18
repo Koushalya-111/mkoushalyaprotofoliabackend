@@ -5,19 +5,13 @@ require("dotenv").config();
 
 const app = express();
 
-app.use(
-  cors({
-    origin: "http://localhost:5173",
-    credentials: true,
-  }),
-);
-
+// Middleware
 app.use(cors());
 app.use(express.json());
 
-// ADD THIS HERE 👇
-app.get('/', (req, res) => {
-  res.send('Backend API is running');
+// Root Route
+app.get("/", (req, res) => {
+  res.send("Backend API is running");
 });
 
 // Routes
